@@ -8,13 +8,13 @@ public class Games{
 	private int estoque;
 	private double desconto;
 	private double recarga;
-	private double valor;
+	
 
 
 
 
 	public Games(String nome, String genero, int lancamento, double preco, int estoque, double desconto,
-			double recarga, double valor) {
+			double recarga) {
 		super();
 		this.nome = nome;
 		this.genero = genero;
@@ -23,7 +23,6 @@ public class Games{
 		this.estoque = estoque;
 		this.desconto = desconto;
 		this.recarga = recarga;
-		this.valor = valor;
 	}
 
 
@@ -82,10 +81,4 @@ public class Games{
 		this.recarga = recarga;
 	}
 
-	public double getValor() {
-		return valor;
-	}
-	public void setValor(double valor) {
-		this.valor = valor;
-	}
 }
