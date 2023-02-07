@@ -7,7 +7,7 @@ public class Games{
 	private double preco;
 	private int estoque;
 	private double desconto;
-	private double recarga;
+	private double carteira;
 	
 
 
@@ -22,7 +22,7 @@ public class Games{
 		this.preco = preco;
 		this.estoque = estoque;
 		this.desconto = desconto;
-		this.recarga = recarga;
+		this.carteira = carteira;
 	}
 
 
@@ -72,13 +72,13 @@ public class Games{
 		this.desconto = desconto;
 	}
 
-	public double getRecarga() {
-		return recarga;
+	public double getCarteira() {
+		return carteira;
 
 	}
 
-	public void setRecarga(double recarga) {
-		this.recarga = recarga;
+	public void setCarteira(double carteira) {
+		this.carteira = carteira;
 	}
 
 }
