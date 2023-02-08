@@ -23,10 +23,10 @@ public class CadastrarProd {
 					+ " \n 2 - Visualizar Produto/s"
 					+ " \n 3 - Recaregar Valor"
 					+ " \n 4 - Vizualizar Carteira"
-					+ " \n 4 - valor com Desconto"
-					+ " \n 5 - Jogo no Carrinho"
-					+ " \n 6 - comprar Produto"
-					+ " \n 7 - baixa no Estoque pos compra"
+					+ " \n 5 - valor com Desconto"
+					+ " \n 6 - Jogo no Carrinho"
+					+ " \n 7 - comprar Produto"
+					+ " \n 8 - baixa no Estoque pos compra"
 					+ " \n 9 - Finalizar Sistema ");
 			op = Integer.parseInt(in.nextLine());
 			switch(op) {
@@ -39,7 +39,7 @@ public class CadastrarProd {
 			case 6: jogoCarrinho(games);break;
 			case 7: comprarProduto(games);break;
 			case 8: baixaEstoque(games);break;
-			case 9:
+			case 9:System.out.println(" Finalizar Sistema !!");
 
 			}
 
@@ -80,7 +80,6 @@ public class CadastrarProd {
 
 			if(games1.getNome().equalsIgnoreCase(jogo)) {
 				
-				games1.setPreco(games1.getPreco() * games1.getDesconto());
 				games1.setCarteira(games1.getCarteira() - games1.getPreco());
 
 				System.out.println(" Valor pago foi de : "+games1.getPreco());
@@ -91,7 +90,7 @@ public class CadastrarProd {
 
 	private static void jogoCarrinho(ArrayList <Games> games) {
 
-         System.out.println("\n=============\n Compras Feitas \n ==============");
+         System.out.println("\n===============\n Carrinho Compras \n ================");
          
          for (Games games1 : games) {
 			
@@ -112,18 +111,23 @@ public class CadastrarProd {
 		for (Games games1 : games) {
 			if(games1.getNome().equalsIgnoreCase(nome)) {
 
-				System.out.println("\n nome do Jogo : "+games1.getNome()
+			    System.out.println("\n nome do Jogo : "+games1.getNome()
 				+" \n Genero do : "+games1.getGenero()
 				+" \n Data de Lancamento : "+games1.getLancamento()
 				+" \n Preco : "+games1.getPreco());
 
-				if(games1.getPreco() >=150 && games1.getPreco() < 200) 
-					 games1.setDesconto( 0.95);
-					games1.setPreco(games1.getPreco() * games1.getDesconto());		
-				   
-				
+				if(games1.getPreco() >=50 && games1.getPreco() < 100) {
+					games1.setPreco(games1.getPreco());		
+				}else if(games1.getPreco() >=100 && games1.getPreco() < 150) { 
+						 games1.setDesconto( 0.95);
+						games1.setPreco(games1.getPreco() * games1.getDesconto());		
+				}else if(games1.getPreco() >=150 && games1.getPreco() < 200) {
+				 games1.setDesconto( 0.90);
+				games1.setPreco(games1.getPreco() * games1.getDesconto());		
+		  
+				}
 				System.out.println(" Preco com o desconto para o jogo "+games1.getNome()+" e "+games1.getPreco());
-
+				
 			}else 
 				System.out.println(" Jogo Nao Encontrado");
 		}
