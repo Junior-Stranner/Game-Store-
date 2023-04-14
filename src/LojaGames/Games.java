@@ -2,27 +2,28 @@ package LojaGames;
 
 public class Games{
 	private String nome;
-	private String genero;
 	private int lancamento;
 	private double preco;
 	private int estoque;
 	private double desconto;
 	private double carteira;
 	
+	public void vizualizaCarteira() {
+		
+		System.out.println("Carteira Atual : "+this.carteira);
+	}
 
+	
 
-
-
-	public Games(String nome, String genero, int lancamento, double preco, int estoque, double desconto,
+	public Games(String nome, int lancamento, double preco, int estoque, double desconto,
 			double recarga) {
 		super();
 		this.nome = nome;
-		this.genero = genero;
 		this.lancamento = lancamento;
 		this.preco = preco;
 		this.estoque = estoque;
 		this.desconto = desconto;
-		this.carteira = carteira;
+		this.carteira = 0;
 	}
 
 
@@ -37,14 +38,6 @@ public class Games{
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public String getGenero() {
-		return genero;
-	}
-
-	public void setGenero(String genero) {
-		this.genero = genero;
 	}
 
 	public int getLancamento() {
